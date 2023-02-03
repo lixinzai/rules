@@ -31,7 +31,7 @@
           "desc": "启用后，重写抓取的WSKEY会自动发送给机器人"
         },
         {
-          "id": "WSKEY_TG-BOTTOKEN",
+          "id": "WSKEY-TG-BOTTOKEN",
           "name": "TG-BOTToken",
           "val": "",
           "type": "text",
