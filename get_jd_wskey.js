@@ -57,18 +57,12 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
       if (typeof $.chat_ids != 'object') {
         $.chat_ids = JSON.parse($.chat_ids);
       }
-      if ($.chat_ids.length < 1) {
+      if ($.chat_ids.length > 1) {
         $.log('Use Telegram API...\n')
         await updateCookie_1(cookie, chat_id = []);
       } else {
-        for (const chat_id of $.chat_ids) {
-          $.log('Use Telegram API...\n')
-          let update = await updateCookie_1(cookie, chat_id);
-          if ($.bot_token && !update) {
-            $.log('Use Telegram API...\n')
-            await updateCookie_2(cookie, chat_id);
-          }
-        }
+        $.subt = '⚠️ 连接TGBOT失败。';
+        $.msg($.subt, cookie);
       }
       if ($.success) {
         $.setdata(JSON.stringify(cookiesData, null, 2), 'WSKEYList');
