@@ -7,7 +7,7 @@
   "apps": [
     {
       "id": "wskey",
-      "name": "京东WSKEY",
+      "name": "京东WSKEY管理",
       "author": "@lixinzai",
       "descs_html": [
         "用于自动抓取京东WSKEY"
