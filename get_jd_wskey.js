@@ -89,7 +89,7 @@ $.autoUpload = $.getdata('WSKEY_AUTO_UPLOAD') || '';
 function updateCookie_1(wskey, chat_id) {
   return new Promise((resolve) => {
     const opts = {
-      url: `https://api.telegram.org/bot{$.bot_token}/sendMessage?{chat_id}`,
+      url: `https://api.telegram.org/bot${$.bot_token}/sendMessage?chat_id=${chat_id}`,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
