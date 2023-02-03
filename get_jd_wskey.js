@@ -31,7 +31,7 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
   const cookie = `wskey=${key};pt_pin=${pin};`;
   const userName = pin;
   const decodeName = decodeURIComponent(userName);
-  let cookiesData = JSON.parse($.getdata('wskeyList') || '[]');
+  let cookiesData = JSON.parse($.getdata('WSKEYList') || '[]');
   let updateIndex;
   const existCookie = cookiesData.find((item, index) => {
     const ck = item.cookie;
@@ -71,7 +71,7 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
         }
       }
       if ($.success) {
-        $.setdata(JSON.stringify(cookiesData, null, 2), 'wskeyList');
+        $.setdata(JSON.stringify(cookiesData, null, 2), 'WSKEYList');
       } else {
         $.subt = '⚠️ WSKEY 提交失败。';
         $.msg($.subt, cookie);
