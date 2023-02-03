@@ -92,7 +92,7 @@ function updateCookie_1(wskey, chat_id) {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: `text=${wskey}&disable_web_page_preview=true`,
+      body: `&text=${wskey}&disable_web_page_preview=true`,
     };
     $.post(opts, (err, resp, data) => {
       try {
