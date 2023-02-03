@@ -54,16 +54,7 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
 
   if ($.autoUpload !== "false") {  // 自动上传
     if ($.needUpload) {
-      if (typeof $.chat_ids != 'object') {
-        $.chat_ids = JSON.parse($.chat_ids);
-      }
-      if ($.chat_ids.length > 1) {
-        $.log('Use Telegram API...\n')
-        await updateCookie_1(cookie, chat_id = []);
-      } else {
-        $.subt = '⚠️ 连接TGBOT失败。';
-        $.msg($.subt, cookie);
-      }
+      
       if ($.success) {
         $.setdata(JSON.stringify(cookiesData, null, 2), 'WSKEYList');
       } else {
@@ -83,7 +74,7 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
 function updateCookie_1(wskey, chat_id) {
   return new Promise((resolve) => {
     const opts = {
-      url: `https://api.telegram.org/bot${$.bot_token}/sendMessage?chat_id=${chat_id}`,
+      url: `https://api.telegram.org/bot${$.bot_token}/sendMessage?chat_id=${$.chat_ids}`,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
