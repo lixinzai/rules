@@ -1,0 +1,60 @@
+{
+  "id": "lixinzai.app.sub",
+  "name": "lixinzai 应用订阅",
+  "author": "@lixinzai",
+  "icon": "https://avatars.githubusercontent.com/u/59134415",
+  "repo": "https://github.com/lixinzai",
+  "apps": [
+    {
+      "id": "wskey",
+      "name": "京东WSKEY",
+      "author": "@lixinzai",
+      "descs_html": [
+        "用于自动抓取京东WSKEY"
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/lixinzai/PNG/main/jdjoy.png",
+        "https://raw.githubusercontent.com/lixinzai/PNG/main/jdjoy.png"
+      ],
+      "keys": [
+        "WSKEY-AUTO-UPLOAD",
+        "WSKEY-TG-BOT-TOKEN",
+        "WSKEY-TG-USER-ID",
+        "wskeyList"
+      ],
+      "settings": [
+        {
+          "id": "WSKEY-AUTOU-PLOAD",
+          "name": "自动提交WSKEY",
+          "val": true,
+          "type": "boolean",
+          "desc": "启用后，重写抓取的WSKEY会自动提交（上车）"
+        },
+        {
+          "id": "WSKEY_TG-BOT-TOKEN",
+          "name": "Telegram机器人Token",
+          "val": "",
+          "type": "text",
+          "desc": "填写 Telegram 机器人的 Token，格式：123456:abcdefgabcdefgabcdefg"
+        },
+        {
+          "id": "WSKEY-TG-USER-ID",
+          "name": "Telegram 会话ID",
+          "val": "",
+          "type": "text",
+          "desc": "填写 Telegram 会话ID，以数组形式保存[\"12345678\"]"
+        },
+        {
+          "id": "wskeyList",
+          "name": "京东WSKEY",
+          "val": "",
+          "type": "textarea",
+          "rows": 10,
+          "desc": "京东WSKEY列表"
+        }
+      ]
+    },
+
+
+  ]
+}
