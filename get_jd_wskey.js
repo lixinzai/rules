@@ -20,7 +20,7 @@ const WSKEY = $request.headers['Cookie'] || $request.headers['cookie'];
 const pin = encodeURIComponent(WSKEY.match(/pin=([^=;]+?);/)[1]);
 const key = WSKEY.match(/wskey=([^=;]+?);/)[1];
 $.bot_token = $.getdata('WSKEY-TG-BOTTOKEN') || '';
-$.chat_ids = $.getdata('WSKEY-TG-USERID') || [];
+$.chat_ids = $.getdata('WSKEY-TG-CHATID') || [];
 $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
 
 !(async () => {
