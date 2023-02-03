@@ -19,7 +19,7 @@
       "keys": [
         "WSKEY-AUTOUPLOAD",
         "WSKEY-TG-BOTTOKEN",
-        "WSKEY-TG-USERID",
+        "WSKEY-TG-CHATID",
         "wskeyList"
       ],
       "settings": [
