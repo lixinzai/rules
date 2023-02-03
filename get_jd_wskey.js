@@ -19,9 +19,9 @@ const $ = new Env('京东 WSKEY');
 const WSKEY = $request.headers['Cookie'] || $request.headers['cookie'];
 const pin = encodeURIComponent(WSKEY.match(/pin=([^=;]+?);/)[1]);
 const key = WSKEY.match(/wskey=([^=;]+?);/)[1];
-$.bot_token = $.getdata('WSKEY-TG-BOT-TOKEN') || '';
-$.chat_ids = $.getdata('WSKEY-TG-USER-ID') || [];
-$.autoUpload = $.getdata('WSKEY-AUTO-UPLOAD') || '';
+$.bot_token = $.getdata('WSKEY-TG-BOTTOKEN') || '';
+$.chat_ids = $.getdata('WSKEY-TG-USERID') || [];
+$.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
 
 !(async () => {
   if (!pin || !key) {
