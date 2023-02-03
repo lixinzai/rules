@@ -45,7 +45,7 @@
           "desc": "填写TG-chatID，以数组形式保存[\"12345678\"]"
         },
         {
-          "id": "wskeyList",
+          "id": "WSKEYList",
           "name": "京东WSKEY",
           "val": "",
           "type": "textarea",
