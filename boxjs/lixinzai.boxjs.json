@@ -6,11 +6,11 @@
   "repo": "https://github.com/lixinzai",
   "apps": [
     {
-      "id": "wskey",
+      "id": "JDWSKEY",
       "name": "京东WSKEY管理",
       "author": "@lixinzai",
       "descs_html": [
-        "用于自动抓取京东WSKEY"
+        "用于自动抓取京东WSKEY可选发送tgbot"
       ],
       "icons": [
         "https://raw.githubusercontent.com/lixinzai/PNG/main/jdjoy.png",
@@ -25,32 +25,32 @@
       "settings": [
         {
           "id": "WSKEY-AUTOUPLOAD",
-          "name": "自动提交WSKEY",
+          "name": "自动上传WSKEY",
           "val": true,
           "type": "boolean",
-          "desc": "启用后，重写抓取的WSKEY会自动提交（上车）"
+          "desc": "启用后，重写抓取的WSKEY会自动发送给机器人"
         },
         {
           "id": "WSKEY_TG-BOTTOKEN",
-          "name": "Telegram机器人Token",
+          "name": "TG-BOTToken",
           "val": "",
           "type": "text",
-          "desc": "填写 Telegram 机器人的 Token，格式：123456:abcdefgabcdefgabcdefg"
+          "desc": "填写Telegram机器人的Token，格式：123456:abcdefghjkl"
         },
         {
           "id": "WSKEY-TG-USERID",
-          "name": "Telegram 会话ID",
+          "name": "TG-chatID",
           "val": "",
           "type": "text",
-          "desc": "填写 Telegram 会话ID，以数组形式保存[\"12345678\"]"
+          "desc": "填写TG-chatID，以数组形式保存[\"12345678\"]"
         },
         {
           "id": "wskeyList",
-          "name": "京东WSKEY",
+          "name": "WSKEY",
           "val": "",
           "type": "textarea",
           "rows": 10,
-          "desc": "京东WSKEY列表"
+          "desc": "京东WSKEY"
         }
       ]
     }
