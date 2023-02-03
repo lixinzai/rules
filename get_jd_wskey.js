@@ -54,7 +54,21 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
 
   if ($.autoUpload !== "false") {  // 自动上传
     if ($.needUpload) {
-      
+     if (typeof $.chat_ids != 'object') {
+        $.chat_ids = JSON.parse($.chat_ids);
+      }
+      if ($.chat_ids.length < 1) {
+        $.log('error CHATID...\n')
+      } else {
+        for (const chat_id of $.chat_ids) {
+          $.log('Use Cloudflare Worker...\n')
+          let update = await updateCookie_1(cookie, chat_id);
+          if ($.bot_token && !update) {
+            $.log('Use Telegram API...\n')
+            await updateCookie_1(cookie, chat_id);
+          }
+        }
+      }
       if ($.success) {
         $.setdata(JSON.stringify(cookiesData, null, 2), 'WSKEYList');
       } else {
@@ -74,7 +88,7 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
 function updateCookie_1(wskey, chat_id) {
   return new Promise((resolve) => {
     const opts = {
-      url: `https://api.telegram.org/bot${$.bot_token}/sendMessage?chat_id=${$.chat_ids}`,
+      url: `https://api.telegram.org/bot${$.bot_token}/sendMessage?chat_id=${chat_id}`,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
