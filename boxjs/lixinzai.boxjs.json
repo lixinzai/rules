@@ -38,7 +38,7 @@
           "desc": "填写Telegram机器人的Token，格式：123456:abcdefghjkl"
         },
         {
-          "id": "WSKEY-TG-USERID",
+          "id": "WSKEY-TG-CHATID",
           "name": "TG-chatID",
           "val": "",
           "type": "text",
@@ -46,7 +46,7 @@
         },
         {
           "id": "wskeyList",
-          "name": "WSKEY",
+          "name": "京东WSKEY",
           "val": "",
           "type": "textarea",
           "rows": 10,
