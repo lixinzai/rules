@@ -65,7 +65,7 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
           let update = await updateCookie_1(cookie, chat_id);
           if ($.bot_token && !update) {
             $.log('Use Telegram API...\n')
-            await updateCookie_2(cookie, chat_id);
+            await updateCookie_1(cookie, chat_id);
           }
         }
       }
