@@ -1,0 +1,149 @@
+# ========================
+# Clash-ALL 优化配置
+# ========================
+
+proxies:
+  - {name: 直连, type: direct}
+  - {name: 拒绝, type: reject}
+
+# ========================
+# 策略组定义
+# ========================
+proxy-groups:
+  - {name: 🚀 默认代理, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🍀 Google, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🤖 AI, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🐬 OneDrive, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🪟 Microsoft, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🎮 游戏平台, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 📲 Telegram, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 📹 YouTube, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🎵 TikTok, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🎥 NETFLIX, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🎃 Spotify, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: ✈️ Speedtest, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🍎 Apple, type: select, proxies: [直连, 🚀 默认代理]}
+  - {name: 🎯 直连, type: select, proxies: [直连, 🚀 默认代理]}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 狮城故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 狮城智能, ♻️ 日本智能, ♻️ 美国智能, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾自动, 🇸🇬 狮城节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
+  - {name: 🇨🇳 台湾自动, type: select, include-all: true, filter: "(?i)台|新北|彰化|TW|Taiwan"}
+  - {name: 🇸🇬 狮城节点, type: select, include-all: true, filter: "(?i)新加坡|坡|狮城|SG|Singapore"}
+  - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日|jp|japan"}
+  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states"}
+  - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+  - {name: 🔯 台湾故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台|新北|彰化|TW|Taiwan))^((?!(港|日|韩|新|美)).)*$" }
+  - {name: 🔯 狮城故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(台|日|韩|深|美)).)*$"}
+  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
+  - {name: 🔯 美国故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|韩|新|日)).)*$" }
+  - {name: ♻️ 香港智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+  - {name: ♻️ 台湾智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(台|新北|彰化|TW|Taiwan))^((?!(港|日|韩|新|美)).)*$" }
+  - {name: ♻️ 狮城智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$" }
+  - {name: ♻️ 日本智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
+  - {name: ♻️ 美国智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
+  - {name: 🌐 全部节点, type: select, include-all: true}
+
+# ========================
+# 规则引擎（rules）
+# ========================
+rules:
+  - RULE-SET,ChatGPT / Domain,🤖 AI
+  - RULE-SET,Claude / Domain,🤖 AI
+  - RULE-SET,Meta AI / Domain,🤖 AI
+  - RULE-SET,Perplexity / Domain,🤖 AI
+  - RULE-SET,Copilot / Domain,🤖 AI
+  - RULE-SET,Gemini / Domain,🤖 AI
+  - RULE-SET,Reddit / Domain,👨🏿‍💻 GitHub
+  - RULE-SET,GitHub / Domain,👨🏿‍💻 GitHub
+  - RULE-SET,Telegram / Domain,📲 Telegram
+  - RULE-SET,Telegram / IP,📲 Telegram
+  - RULE-SET,WhatsApp / Domain,🚀 默认代理
+  - RULE-SET,Facebook / Domain,🚀 默认代理
+  - RULE-SET,Apple / Domain,🍎 Apple
+  - RULE-SET,Apple-CN / Domain,🍎 Apple
+  - RULE-SET,onedrive / Domain,🐬 OneDrive
+  - RULE-SET,Microsoft / Domain,🪟 Microsoft
+  - RULE-SET,Youtube / Domain,📹 YouTube
+  - RULE-SET,TikTok / Domain,🎵 TikTok
+  - RULE-SET,Netflix / Domain,🎥 NETFLIX
+  - RULE-SET,Netflix / IP,🎥 NETFLIX,no-resolve
+  - RULE-SET,Disney / Domain,🎥 NETFLIX
+  - RULE-SET,Amazon / Domain,🎥 NETFLIX
+  - RULE-SET,Crunchyroll / Domain,🎥 NETFLIX
+  - RULE-SET,HBO / Domain,🎥 NETFLIX
+  - RULE-SET,Spotify / Domain,🎃 Spotify
+  - RULE-SET,Steam / Domain,🎮 游戏平台
+  - RULE-SET,Epic / Domain,🎮 游戏平台
+  - RULE-SET,EA / Domain,🎮 游戏平台
+  - RULE-SET,Blizzard / Domain,🎮 游戏平台
+  - RULE-SET,UBI / Domain,🎮 游戏平台
+  - RULE-SET,PlayStation / Domain,🎮 游戏平台
+  - RULE-SET,Nintend / Domain,🎮 游戏平台
+  - RULE-SET,Google / Domain,🍀 Google
+  - RULE-SET,Google / IP,🍀 Google,no-resolve
+  - RULE-SET,Nvidia / Domain,🎮 游戏平台
+  - RULE-SET,Telegram / IP,📲 Telegram
+  - RULE-SET,Telegram / Domain,📲 Telegram
+  - RULE-SET,Proxy / Domain,🚀 默认代理
+  - RULE-SET,Globe / Domain,🚀 默认代理
+  - RULE-SET,Direct / Domain,🎯 直连
+  - RULE-SET,China / Domain,🎯 直连
+  - RULE-SET,China / IP,🎯 直连,no-resolve
+  - RULE-SET,Private / Domain,🎯 直连
+  - MATCH,🐟 漏网之鱼
+
+# ========================
+# 规则集提供者
+# ========================
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+
+rule-providers:
+  TEST / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Check.list"}
+  ChatGPT / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs"}
+  Claude / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.list"}
+  Meta AI / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/MetaAi.list"}
+  Perplexity / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/perplexity.mrs"}
+  Copilot / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Copilot.list"}
+  Gemini / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Gemini.list"}
+  GitHub / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/github.mrs"}
+  Telegram / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/telegram.mrs"}  
+  Telegram / IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/telegram.mrs"}
+  Twitter / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/x.mrs"}
+  WhatsApp / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Whatsapp/Whatsapp.list"}
+  Facebook / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/facebook.mrs"}
+  Amazon / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/amazon.mrs"}
+  Apple-CN / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-cn.mrs"}
+  Apple / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple.mrs"} 
+  onedrive / Domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs"}
+  Microsoft / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs"}
+  TikTok / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/tiktok.mrs"}
+  Netflix / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/netflix.mrs"}
+  Netflix / IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/netflix.mrs"}
+  Disney / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/disney.mrs"}
+  HBO / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/hbo.mrs"}
+  Spotify / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/spotify.mrs"}
+  Steam / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"}
+  Epic / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Epic/Epic.list"}
+  EA / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/EA/EA.list"}
+  Blizzard / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.list"}
+  UBI / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/UBI/UBI.list"}
+  PlayStation / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PlayStation/PlayStation.list"}
+  Nintend / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.list"}
+  Proxy / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Proxy.list"}
+  Globe / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"} 
+  Direct / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Direct.list"}
+  China / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"}
+  China / IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs"}
+  Private / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"}
+  Block / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Block.list"}
+  Nvidia / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Nvidia/Nvidia.list"}
+  Crunchyroll / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Crunchyroll.list"}
+  Reddit / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/reddit.mrs"}
+  Youtube / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"}  
+  Google / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs"}  
+  Google / IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/google.mrs"}
+# GateFireWall / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/gfw.mrs"}
