@@ -42,7 +42,7 @@ proxy-groups:
   - {name: ♻️ 日本智能, type: smart, uselightgbm: true, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
   - {name: ♻️ 美国智能, type: smart, uselightgbm: true, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
-  - {name: 💧 Nano, type: smart, uselightgbm: true, collectdata: false, include-all: true, interval: 300, filter: "^(电信|移动|龟速|三网|不良|联移|IPv4|IPv6|DDNS|Hysteria2)*$"}
+  - {name: 💧 Nano, type: smart, uselightgbm: true, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(IPv4|IPv6|电信|移动|联通))^((?!(小黑子|官网|群组|QQ|剩余)).)*$" }
   - {name: 🌐 全部节点, type: select, include-all: true}
 
 # ========================
